@@ -20,18 +20,6 @@ function dists(NodeA::Node, NodeB::Node)    # Calculates distance from Node A to
     sqrt((NodeA.Xcoord-NodeB.Xcoord)^2 + (NodeA.Ycoord-NodeB.Ycoord)^2)
 end
 
-# function distance_matrix(nodes::Array{Node,1})            
-#    dist_matrix = zeros(length(nodes),length(nodes))
-#    for i in range(1,length = length(nodes))
-#       for j in range(1,length = length(nodes))
-#            if i<=j 
-#                dist_matrix[i,j] = dists(nodes[i],nodes[j])
-#            end
-#        end
-#    end
-#    dist_matrix = dist_matrix + dist_matrix'        # Symmetric Adjacency Matrix 
-#    return dist_matrix 
-# end
 
 function pathcost(path::Array{Node,1})              # Finds distance of a route starting and ending
     cost = 0                                        # at the same point 
@@ -79,10 +67,6 @@ function simulated_annealing(path::Array{Node,1},T::Float64,counter::Int64,α::F
     end
     return besttour
 end
-
-
-# pathcost(simulated_annealing(nodes,20000.00,10000000,0.999999))
-# 446.94528f0
 
 # pathcost(simulated_annealing(nodes,2.00,100000,0.999999))
 # 457.38843f0
